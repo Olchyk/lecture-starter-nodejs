@@ -1,5 +1,5 @@
-import { dbAdapter } from "../config/db.js";
-import { randomUUID } from "node:crypto";
+import { dbAdapter } from '../config/db.js';
+import { randomUUID } from 'node:crypto';
 
 class BaseRepository {
   constructor(collectionName) {
@@ -12,6 +12,9 @@ class BaseRepository {
   }
 
   getAll() {
+    return this.dbContext.value();
+  }
+  getData() {
     return this.dbContext.value();
   }
 
